@@ -2,7 +2,7 @@ class Pelota {
 
     constructor(){
     
-        this.diam = random(50, 300);
+        this.diam = random(30, 150);
         this.rad = this.diam /2;
 
         this.posX = random(this.rad, width - this.rad);
