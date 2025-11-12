@@ -2,7 +2,7 @@ class Pelota {
 
     constructor(){
     
-        this.diam = random(30, 150);
+        this.diam = random(30, 170);
         this.rad = this.diam /2;
 
         this.posX = random(this.rad, width - this.rad);
@@ -11,7 +11,14 @@ class Pelota {
         this.velX = random(-5, 5);   
         this.velY = random(-5, 5);
 
-        this.nuevoColor = color(random(20, 400), random(100, 300), random(100, 300));
+        let colores = [
+        color('#ff66b2'),
+        color('#ff1493'),
+        color('#ff33aa'),
+        color('#ff99dd'),
+        color('#ff66cc')
+    ];
+        this.nuevoColor = random(colores);
         this.formaInterna = random(['cuadrado', 'triangulo', 'circulo']);
     }
 
@@ -30,18 +37,16 @@ class Pelota {
     } 
 
     visualizar(){
-    
-        fill(this.nuevoColor);
-        stroke(50, 30, 100);
-        strokeWeight(2);
-        circle(this.posX, this.posY, this.diam);
+
+      fill(this.nuevoColor);
+      noStroke();
+      circle(this.posX, this.posY, this.diam);
 
     push()
     noStroke(); 
     
-    let hueOriginal = hue(this.nuevoColor);
-    let hueComplementario = (hueOriginal + 180) % 360;
-    fill(hueComplementario, 120, 225);
+    let c = this.nuevoColor;
+    fill(red(c) + 30, green(c) + 30, blue(c) + 30, 180);
 
     let tamInterno = this.diam * 0.5;
 
