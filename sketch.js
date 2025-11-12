@@ -14,7 +14,7 @@ function setup() {
 }
 
 function draw() {
-    background(200, 30, 90);
+    background(0);
 
      for (let i = 0; i < pelotas.length; i++) {
         pelotas[i].actualizar();
